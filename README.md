@@ -1,19 +1,21 @@
-# Grinch Website Prototype
+# Grinch Advent Calendar – Complete Website Asset Pack V3
 
-This is a static prototype for GitHub Pages.
+Enthalten:
+- Website-Prototyp
+- Homepage-Hintergrund
+- 6 Missionssymbole
+- 6 Storybilder
+- 7 Sprachnachrichten
+- story-assets.js
+- ausführliche Erklärung in WEBSITE-PLAN-DE.md
 
-## Upload
-1. Create a GitHub repository.
-2. Upload all files from this ZIP to the repository root.
-3. Open Settings → Pages.
-4. Choose “Deploy from a branch”.
-5. Select `main` and `/ (root)`.
-6. Save.
+## GitHub Upload
+Den Inhalt dieser ZIP entpacken und in das Repository hochladen.
 
-## Prototype flow
-⭐ Star → code 12345 → Listen / Topic → Mission 1 → 🍪 Gingerbread Man
+## GitHub Pages
+Settings → Pages → Deploy from a branch → main → /(root)
 
-## Notes
-- Vocabulary pronunciation currently uses the browser's English text-to-speech as a placeholder.
-- Later, real MP3 files can be added to `assets/audio/`.
-- Uploaded reference images are included in `assets/images/`.
+## Prototyp-Code
+12345
+
+Bitte zuerst WEBSITE-PLAN-DE.md lesen.

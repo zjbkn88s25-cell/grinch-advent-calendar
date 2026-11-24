@@ -7,140 +7,169 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<main id="app">
-  <section id="home" class="screen active">
-    <div class="hero-card">
-      <div class="hero-copy">
-        <div class="eyebrow">CHRISTMAS MISSION</div>
-        <h1>The Grinch – Together We Save Christmas!</h1>
-        <p>Get ready for the Grinchy Escape Room!</p>
+  <main id="app">
+    <section id="home" class="screen active">
+      <div class="world">
+        <img class="world-bg" src="assets/images/homepage-background.png" alt="Snowy Christmas village with mountains">
+
+        <div class="title-card">
+          <div class="eyebrow">CHRISTMAS ADVENT MISSIONS</div>
+          <h1>The Grinch – Together We Save Christmas!</h1>
+          <p>Get ready for the Grinchy Escape Room!</p>
+        </div>
+
+        <button class="mission hotspot m1 active-mission" data-go="code" aria-label="Mission 1 Grinch Cave">
+          <img src="assets/images/missions/mission-01-grinch-cave.png" alt="">
+          <span class="badge">1</span>
+        </button>
+
+        <button class="mission hotspot m2 locked" aria-label="Mission 2 Star">
+          <img src="assets/images/missions/mission-02-star.png" alt="">
+          <span class="badge">2</span>
+        </button>
+
+        <button class="mission hotspot m3 locked" aria-label="Mission 3 Gingerbread">
+          <img src="assets/images/missions/mission-03-gingerbread.png" alt="">
+          <span class="badge">3</span>
+        </button>
+
+        <button class="mission hotspot m4 locked" aria-label="Mission 4 Bell">
+          <img src="assets/images/missions/mission-04-bell.png" alt="">
+          <span class="badge">4</span>
+        </button>
+
+        <button class="mission hotspot m5 locked" aria-label="Mission 5 Santa">
+          <img src="assets/images/missions/mission-05-santa.png" alt="">
+          <span class="badge">5</span>
+        </button>
+
+        <button class="mission hotspot m6 locked" aria-label="Mission 6 Lock">
+          <img src="assets/images/missions/mission-06-lock.png" alt="">
+          <span class="badge">6</span>
+        </button>
+
+        <div class="nav-strip">
+          <button data-go="how">❓ <span>How does it work?</span></button>
+          <button data-go="teamwork">🤝 <span>Teamwork</span></button>
+          <button data-go="words">📚 <span>Christmas Words</span></button>
+        </div>
+      </div>
+    </section>
+
+    <section id="how" class="screen simple-screen">
+      <button class="back" data-go="home">🏠 Home</button>
+      <h2>❓ How does it work?</h2>
+      <div class="info-grid">
+        <div>🔎<strong>Find the symbol.</strong></div>
+        <div>🔐<strong>Enter the code.</strong></div>
+        <div>🎧<strong>Listen.</strong></div>
+        <div>🎯<strong>Choose the topic.</strong></div>
+        <div>🤝<strong>Complete the mission.</strong></div>
+        <div>🔢<strong>Get your team number.</strong></div>
+        <div>🔎<strong>Find the next symbol.</strong></div>
+      </div>
+    </section>
+
+    <section id="teamwork" class="screen simple-screen">
+      <button class="back" data-go="home">🏠 Home</button>
+      <h2>🤝 Teamwork</h2>
+      <div class="team-box">
+        <div class="kids">👧🏽 👦🏻 👧🏿 👦🏼 👧🏻</div>
+        <h3>We are all special.</h3>
+        <p>We have different strengths.</p>
+        <p>Together, we can do great things.</p>
+      </div>
+    </section>
+
+    <section id="words" class="screen simple-screen">
+      <button class="back" data-go="home">🏠 Home</button>
+      <h2>📚 Christmas Words</h2>
+      <div class="tabs">
+        <button class="tab active" data-tab="decorations">🎄 Decorations</button>
+        <button class="tab" data-tab="food">🍽️ Food</button>
+      </div>
+      <p class="hint">Tap a picture to listen.</p>
+
+      <div id="decorations" class="word-grid tab-panel active">
+        <button class="word-card" data-word="stocking">🧦<span>stocking</span></button>
+        <button class="word-card" data-word="wreath">🎀<span>wreath</span></button>
+        <button class="word-card" data-word="mistletoe">🌿<span>mistletoe</span></button>
+        <button class="word-card" data-word="bell">🔔<span>bell</span></button>
+        <button class="word-card" data-word="star">⭐<span>star</span></button>
+        <button class="word-card" data-word="bauble">🔴<span>bauble</span></button>
+        <button class="word-card" data-word="Christmas tree">🎄<span>Christmas tree</span></button>
+        <button class="word-card" data-word="snowflake">❄️<span>snowflake</span></button>
       </div>
 
-      <button class="mission-symbol star-symbol" data-go="code" aria-label="Open Mission 1">
-        <span>⭐</span><small>MISSION 1</small>
-      </button>
-
-      <button class="mission-symbol ginger-symbol locked" aria-label="Future mission">
-        <span>🍪</span><small>COMING SOON</small>
-      </button>
-
-      <div class="cave-label">Grinch Cave</div>
-    </div>
-
-    <nav class="bottom-nav">
-      <button data-go="how">❓ <span>How does it work?</span></button>
-      <button data-go="teamwork">🤝 <span>Teamwork</span></button>
-      <button data-go="words">📚 <span>Christmas Words</span></button>
-    </nav>
-  </section>
-
-  <section id="how" class="screen">
-    <header class="page-header"><button class="home-btn" data-go="home">🏠</button><h2>❓ How does it work?</h2></header>
-    <div class="steps-grid how-grid">
-      <div class="step-card"><div>🔎</div><strong>FIND</strong><span>the symbol</span></div>
-      <div class="step-card"><div>🔐</div><strong>ENTER</strong><span>the code</span></div>
-      <div class="step-card"><div>🎧</div><strong>LISTEN</strong><span>carefully</span></div>
-      <div class="step-card"><div>🎯</div><strong>CHOOSE</strong><span>the topic</span></div>
-      <div class="step-card"><div>🤝</div><strong>MISSION</strong><span>work as a team</span></div>
-      <div class="step-card"><div>🔢</div><strong>GET</strong><span>your team number</span></div>
-      <div class="step-card"><div>🔎</div><strong>FIND</strong><span>the next symbol</span></div>
-    </div>
-  </section>
-
-  <section id="teamwork" class="screen">
-    <header class="page-header"><button class="home-btn" data-go="home">🏠</button><h2>🤝 Teamwork</h2></header>
-    <div class="team-card">
-      <div class="team-visual">👧🏽 👦🏻 👧🏿 👦🏼 👧🏻</div>
-      <h3>We are all special.</h3>
-      <p>We have different strengths.</p>
-      <p>Together, we can do great things.</p>
-      <div class="roles">
-        <span>👑 Team Leader</span>
-        <span>📦 Material</span>
-        <span>⏰ Time</span>
-        <span>🗣️ Speaker</span>
+      <div id="food" class="word-grid tab-panel">
+        <button class="word-card" data-word="feast">🍽️<span>feast</span></button>
+        <button class="word-card" data-word="pudding">🍮<span>pudding</span></button>
+        <button class="word-card" data-word="roast beast">🍗<span>roast beast</span></button>
+        <button class="word-card" data-word="gingerbread">🍪<span>gingerbread</span></button>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="words" class="screen">
-    <header class="page-header"><button class="home-btn" data-go="home">🏠</button><h2>📚 Christmas Words</h2></header>
-    <div class="tabs">
-      <button class="tab active" data-tab="decorations">🎄 Decorations</button>
-      <button class="tab" data-tab="food">🍽️ Food</button>
-    </div>
-    <p class="tap-note">Tap a picture to listen.</p>
-    <div id="decorations" class="word-grid tab-panel active">
-      <button class="word-card" data-word="stocking"><div class="pic">🧦</div><span>stocking</span></button>
-      <button class="word-card" data-word="wreath"><div class="pic">🎀</div><span>wreath</span></button>
-      <button class="word-card" data-word="mistletoe"><div class="pic">🌿</div><span>mistletoe</span></button>
-      <button class="word-card" data-word="bell"><div class="pic">🔔</div><span>bell</span></button>
-      <button class="word-card" data-word="star"><div class="pic">⭐</div><span>star</span></button>
-      <button class="word-card" data-word="bauble"><div class="pic">🔴</div><span>bauble</span></button>
-      <button class="word-card" data-word="Christmas tree"><div class="pic">🎄</div><span>Christmas tree</span></button>
-      <button class="word-card" data-word="snowflake"><div class="pic">❄️</div><span>snowflake</span></button>
-    </div>
-    <div id="food" class="word-grid tab-panel">
-      <button class="word-card" data-word="feast"><div class="pic">🍽️</div><span>feast</span></button>
-      <button class="word-card" data-word="pudding"><div class="pic">🍮</div><span>pudding</span></button>
-      <button class="word-card" data-word="roast beast"><div class="pic">🍗</div><span>roast beast</span></button>
-      <button class="word-card" data-word="gingerbread"><div class="pic">🍪</div><span>gingerbread</span></button>
-    </div>
-  </section>
-
-  <section id="code" class="screen">
-    <header class="page-header"><button class="home-btn" data-go="home">🏠</button><h2>⭐ Mission 1</h2></header>
-    <div class="code-card">
-      <div class="big-icon">🔐</div>
-      <h3>ENTER THE CODE</h3>
-      <div class="code-inputs">
-        <input inputmode="numeric" maxlength="1"><input inputmode="numeric" maxlength="1"><input inputmode="numeric" maxlength="1"><input inputmode="numeric" maxlength="1"><input inputmode="numeric" maxlength="1">
+    <section id="code" class="screen simple-screen">
+      <button class="back" data-go="home">🏠 Home</button>
+      <div class="code-card">
+        <img src="assets/images/missions/mission-01-grinch-cave.png" alt="Mission 1 Grinch cave" class="code-icon">
+        <h2>🔐 ENTER THE CODE</h2>
+        <div class="code-inputs">
+          <input maxlength="1" inputmode="numeric">
+          <input maxlength="1" inputmode="numeric">
+          <input maxlength="1" inputmode="numeric">
+          <input maxlength="1" inputmode="numeric">
+          <input maxlength="1" inputmode="numeric">
+        </div>
+        <button id="unlockBtn" class="unlock">UNLOCK</button>
+        <p id="codeFeedback"></p>
+        <p class="prototype">Prototype code: 12345</p>
       </div>
-      <button id="unlockBtn" class="primary">UNLOCK</button>
-      <p id="codeFeedback" class="feedback"></p>
-      <p class="prototype-note">Prototype code: <strong>12345</strong></p>
-    </div>
-  </section>
+    </section>
 
-  <section id="listen" class="screen">
-    <header class="page-header"><button class="home-btn" data-go="home">🏠</button><h2>🎧 Listen</h2></header>
-    <div class="story-image"><img src="assets/images/design_reference_decorating.jpeg" alt="Christmas decorating scene"></div>
-    <button id="listenBtn" class="listen-btn">▶ LISTEN</button>
-    <div class="topic-card">
-      <h3>WHAT IS THE TOPIC?</h3>
-      <div class="topic-grid">
-        <button class="topic" data-correct="true">🎄 Christmas Decorations</button>
-        <button class="topic">🍽️ Christmas Feast</button>
-        <button class="topic">🎅 The Grinch as Santa Claus</button>
-        <button class="topic">🎵 Christmas Singing</button>
+    <section id="listen" class="screen simple-screen">
+      <button class="back" data-go="home">🏠 Home</button>
+      <h2>🎧 LISTEN</h2>
+      <div class="story-card">
+        <div class="story-placeholder">🎄 🏠 ✨</div>
+        <button id="listenBtn">▶ LISTEN</button>
+        <h3>WHAT IS THE TOPIC?</h3>
+        <div class="topic-grid">
+          <button class="topic" data-correct="true">🎄 Christmas Decorations</button>
+          <button class="topic">🍽️ Christmas Feast</button>
+          <button class="topic">🎅 The Grinch as Santa Claus</button>
+          <button class="topic">🔔 Christmas Singing</button>
+        </div>
+        <p id="topicFeedback"></p>
       </div>
-      <p id="topicFeedback" class="feedback"></p>
-    </div>
-  </section>
+    </section>
 
-  <section id="mission" class="screen">
-    <header class="page-header"><button class="home-btn" data-go="home">🏠</button><h2>MISSION 1 ⭐</h2></header>
-    <div class="mission-banner"><img src="assets/images/decorate_whoville_board.jpeg" alt="Decorate Whoville"></div>
-    <div class="goal"><span>🚩</span><div><strong>YOUR GOAL</strong><p>Help the Whos decorate their town.</p></div></div>
-    <div class="mission-layout">
-      <aside class="need-card">
-        <h3>🎒 YOU NEED</h3>
-        <div class="need-item">🖼️ <span>Whoville picture</span></div>
-        <div class="need-item">🃏 <span>clue cards</span></div>
-        <div class="level-icons">☀️ ☁️ 🌙 ⭐</div>
-        <div class="station">💡 <strong>HELP STATION</strong></div>
-        <div class="station">✅ <strong>SOLUTION STATION</strong></div>
-      </aside>
-      <section class="mission-steps">
-        <div class="mission-step"><span>1️⃣ 📖</span><div><strong>READ</strong><p>Read your clue.</p></div></div>
-        <div class="mission-step"><span>2️⃣ 🗣️</span><div><strong>SHARE</strong><p>Share with your team.</p></div></div>
-        <div class="mission-step"><span>3️⃣ ✋</span><div><strong>PLACE</strong><p>Place the items together.</p></div></div>
-        <div class="mission-step"><span>4️⃣ ✅</span><div><strong>CHECK</strong><p>Check your work.</p></div></div>
-      </section>
-    </div>
-    <div class="next-symbol"><div>🔎 <strong>NEXT SYMBOL</strong></div><div class="next-big">🍪 Find the gingerbread man!</div></div>
-  </section>
-</main>
-<script src="script.js"></script>
+    <section id="mission" class="screen simple-screen">
+      <button class="back" data-go="home">🏠 Home</button>
+      <h2>MISSION 1 ⭐</h2>
+      <div class="mission-card">
+        <div class="goal"><span>🚩</span><div><strong>YOUR GOAL</strong><p>Help the Whos decorate their town.</p></div></div>
+        <div class="mission-layout">
+          <div class="need">
+            <h3>🎒 YOU NEED</h3>
+            <p>🖼️ Whoville picture</p>
+            <p>🃏 clue cards</p>
+            <p class="levels">☀️ ☁️ 🌙 ⭐</p>
+            <p>💡 HELP STATION</p>
+            <p>✅ SOLUTION STATION</p>
+          </div>
+          <div class="steps">
+            <div>1️⃣ 📖 <strong>READ</strong><span>Read your clue.</span></div>
+            <div>2️⃣ 🗣️ <strong>SHARE</strong><span>Share with your team.</span></div>
+            <div>3️⃣ ✋ <strong>PLACE</strong><span>Place the items together.</span></div>
+            <div>4️⃣ ✅ <strong>CHECK</strong><span>Check your work.</span></div>
+          </div>
+        </div>
+        <div class="next">🔎 <strong>NEXT SYMBOL</strong><br>🍪 Find the gingerbread man!</div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
