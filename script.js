@@ -251,19 +251,20 @@
   }));
 
 
-  // Quick navigation back to Whoville
-  $("#lockHome")?.addEventListener("click", () => show("home"));
-
-  // Teacher reset: close Mission 2–6 again in this browser
+  // Teacher reset: close Mission 2–6 again in THIS browser.
   const teacherResetModal = $("#teacherResetModal");
+
   $("#teacherResetBtn")?.addEventListener("click", () => {
     teacherResetModal?.classList.remove("hidden");
   });
+
   $("#teacherResetCancel")?.addEventListener("click", () => {
     teacherResetModal?.classList.add("hidden");
   });
+
   $("#teacherResetConfirm")?.addEventListener("click", () => {
     localStorage.setItem(storeKey, JSON.stringify([1]));
+    pendingUnlock = null;
     teacherResetModal?.classList.add("hidden");
     show("home");
   });

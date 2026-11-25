@@ -1,0 +1,24 @@
+V15 – FINALE KORREKTUR
+
+Bitte ALLE Dateien aus dieser ZIP ins GitHub-Hauptverzeichnis hochladen.
+Gleichnamige Dateien ersetzen und Commit changes.
+
+Enthalten:
+- index.html
+- script.js
+- styles.css
+- home-lock.png
+- teacher-reset.png
+
+Jetzt gilt:
+1. Das Weihnachts-Zahlenschloss ist NICHT mehr ein Home-Button.
+2. Es steht ausschließlich in Schritt 6 über:
+   FIND THE NEXT MISSION
+   Look for:
+   STAR
+3. STAR bleibt nur als geschriebenes Wort stehen.
+4. Klick auf den STAR in Whoville öffnet weiterhin die Code-Eingabe.
+5. Das Weihnachts-Zahnrad sitzt klein oben rechts.
+6. Klick auf das Zahnrad -> Teacher Menu -> RESET.
+7. RESET setzt die gespeicherten Freischaltungen in diesem Browser auf Mission 1 zurück.
+8. Mission 2–6 sind danach wieder gesperrt.
