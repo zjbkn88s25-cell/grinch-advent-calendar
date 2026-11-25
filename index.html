@@ -2,172 +2,159 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-  <title>The Grinch – Together We Save Christmas!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Whoville Christmas Mission</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="topbar">
-    <div class="brand"><span class="holly">❦</span> THE GRINCH <span class="holly">❦</span></div>
-    <nav>
-      <button data-nav="home">HOME</button>
-      <button data-nav="words">CHRISTMAS WORDS</button>
-    </nav>
-    <button id="musicToggle" class="music-btn" aria-label="Toggle music">♫ MUSIC</button>
-  </header>
+<header class="topbar">
+  <div class="brand">❦ THE GRINCH ❦</div>
+  <nav>
+    <button data-nav="home">HOME</button>
+    <button data-nav="words">CHRISTMAS WORDS</button>
+  </nav>
+  <button id="musicToggle" class="music-btn">♫ MUSIC OFF</button>
+</header>
+<button id="floatingHome" class="floating-home hidden">← HOME</button>
 
-  <button id="floatingHome" class="floating-home hidden">← HOME</button>
-  <main id="app">
-    <!-- HOME -->
-    <section id="screen-home" class="screen active home-screen">
-      <div class="hero-copy">
-        <h1>Whoville Christmas Mission</h1>
-        <p>Look carefully. Find the next symbol.</p>
-      </div>
+<main id="app">
+  <section id="screen-home" class="screen active home-screen">
+    <div class="hero-copy">
+      <h1>Whoville Christmas Mission</h1>
+      <p>Different strengths. One team. One mission.</p>
+    </div>
 
-      <div class="mission-hotspot mission-1" data-mission="1" aria-label="Mission 1">
-        <img src="egg-mission-01-grinch.png" alt="Grinch in cave" />
-      </div>
-      <div class="mission-hotspot mission-2" data-mission="2" aria-label="Mission 2">
-        <img src="egg-mission-02-star.png" alt="Star" />
-      </div>
-      <div class="mission-hotspot mission-3" data-mission="3" aria-label="Mission 3">
-        <img src="egg-mission-03-gingerbread.png" alt="Gingerbread" />
-      </div>
-      <div class="mission-hotspot mission-4" data-mission="4" aria-label="Mission 4">
-        <img src="egg-mission-04-bell.png" alt="Bell" />
-      </div>
-      <div class="mission-hotspot mission-5" data-mission="5" aria-label="Mission 5">
-        <img src="egg-mission-05-santa.png" alt="Santa" />
-      </div>
-      <div class="mission-hotspot mission-6" data-mission="6" aria-label="Mission 6">
-        <img src="egg-mission-06-lock.png" alt="Lock" />
-      </div>
+    <button class="mission-hotspot mission-1" data-mission="1"><img src="egg-mission-01-grinch.png" alt="Grinch"></button>
+    <button class="mission-hotspot mission-2" data-mission="2"><img src="egg-mission-02-star.png" alt="Star"></button>
+    <button class="mission-hotspot mission-3" data-mission="3"><img src="egg-mission-03-gingerbread.png" alt="Gingerbread"></button>
+    <button class="mission-hotspot mission-4" data-mission="4"><img src="egg-mission-04-bell.png" alt="Bell"></button>
+    <button class="mission-hotspot mission-5" data-mission="5"><img src="egg-mission-05-santa.png" alt="Santa"></button>
+    <button class="mission-hotspot mission-6" data-mission="6"><img src="egg-mission-06-lock.png" alt="Lock"></button>
 
+    <button class="vocab-hotspot vh-wreath" data-word="wreath"><img src="egg-distractor-wreath.png" alt="wreath"></button>
+    <button class="vocab-hotspot vh-stocking" data-word="stocking"><img src="egg-distractor-stocking.png" alt="stocking"></button>
+    <button class="vocab-hotspot vh-mistletoe" data-word="mistletoe"><img src="egg-distractor-mistletoe.png" alt="mistletoe"></button>
+    <button class="vocab-hotspot vh-bauble" data-word="bauble"><img src="egg-distractor-bauble.png" alt="bauble"></button>
+    <button class="vocab-hotspot vh-present" data-word="present"><img src="egg-distractor-present.png" alt="present"></button>
+    <button class="vocab-hotspot vh-candy" data-word="candy cane"><img src="egg-distractor-candy-cane.png" alt="candy cane"></button>
+    <button class="vocab-hotspot vh-sleigh" data-word="sleigh"><img src="egg-distractor-sleigh.png" alt="sleigh"></button>
+    <button class="vocab-hotspot vh-pudding" data-word="pudding"><img src="egg-distractor-pudding.png" alt="pudding"></button>
 
-      <button class="vocab-hotspot vh-wreath" data-word="wreath" aria-label="wreath"><img src="egg-distractor-wreath.png" alt="wreath"></button>
-      <button class="vocab-hotspot vh-stocking" data-word="stocking" aria-label="stocking"><img src="egg-distractor-stocking.png" alt="stocking"></button>
-      <button class="vocab-hotspot vh-mistletoe" data-word="mistletoe" aria-label="mistletoe"><img src="egg-distractor-mistletoe.png" alt="mistletoe"></button>
-      <button class="vocab-hotspot vh-bauble" data-word="bauble" aria-label="bauble"><img src="egg-distractor-bauble.png" alt="bauble"></button>
-      <button class="vocab-hotspot vh-present" data-word="present" aria-label="present"><img src="egg-distractor-present.png" alt="present"></button>
-      <button class="vocab-hotspot vh-candy" data-word="candy cane" aria-label="candy cane"><img src="egg-distractor-candy-cane.png" alt="candy cane"></button>
-      <button class="vocab-hotspot vh-sleigh" data-word="sleigh" aria-label="sleigh"><img src="egg-distractor-sleigh.png" alt="sleigh"></button>
-      <button class="vocab-hotspot vh-pudding" data-word="pudding" aria-label="pudding"><img src="egg-distractor-pudding.png" alt="pudding"></button>
+    <button id="teamworkHotspot" class="teamwork-hotspot"><img src="teamwork-kids.png" alt="Teamwork"></button>
+    <div id="wrongToast" class="wrong-toast hidden"><strong id="wrongWord">Not this one.</strong><span>Try again!</span></div>
+  </section>
 
+  <section id="screen-story" class="screen story-screen">
+    <div class="story-card">
+      <div class="story-image-wrap"><img id="storyImage" alt="Story scene"></div>
+      <div class="story-side">
+        <div class="eyebrow" id="storyMissionLabel">MISSION</div>
+        <h2>👂 LISTEN</h2>
+        <button id="playStory" class="primary audio-button">▶ PLAY AUDIO</button>
+        <div class="prompt-box"><h3>💬 What is this part about?</h3></div>
+        <p>Talk together.</p>
+        <button id="storyNext" class="primary">NEXT →</button>
+      </div>
+    </div>
+  </section>
 
-      <button class="teamwork-hotspot" id="teamworkHotspot" aria-label="Teamwork">
-        <img src="teamwork-kids.png" alt="Children working together as a team">
+  <section id="screen-escape" class="screen info-screen">
+    <div class="escape-shell">
+      <div class="eyebrow">GET READY</div>
+      <h2>How does our Escape Room work?</h2>
+      <div class="video-box">
+        <iframe src="https://app.lumi.education/run/B6_eTg" title="Escape Room explanation" allowfullscreen></iframe>
+      </div>
+      <div class="escape-actions">
+        <a class="primary link-button" href="https://app.lumi.education/run/B6_eTg" target="_blank" rel="noopener">OPEN VIDEO ↗</a>
+        <button id="escapeNext" class="primary">NEXT →</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="screen-team-intro" class="screen info-screen">
+    <div class="team-intro-shell">
+      <div class="eyebrow">TEAMWORK</div>
+      <h2>We are different. Together we are strong.</h2>
+      <button id="startTeamMission" class="team-intro-picture">
+        <img src="teamwork-kids.png" alt="Children working together">
       </button>
+      <p>Tap the team to start Mission 1.</p>
+    </div>
+  </section>
 
-      <div id="wrongToast" class="wrong-toast hidden">
-        <strong id="wrongWord">Not this one.</strong>
-        <span>Try again!</span>
+  <section id="screen-mission1" class="screen mission1-screen">
+    <div class="mission1-layout">
+      <div class="goal-row">
+        <img src="ui-goal.png" alt="Goal">
+        <div><span>YOUR GOAL</span><h2>I can explain the four team roles.</h2></div>
       </div>
-
-      <div id="grinchChoice" class="choice-popover hidden">
-        <button id="grinchListen">🎵 LISTEN TO THE GRINCH</button>
-        <button id="grinchMission">🎯 START MISSION</button>
+      <div class="need-row">
+        <div class="need-title">WHAT DO YOU NEED?</div>
+        <button class="need-card zoomable" data-image="mission1-team-board.png"><img src="mission1-team-board.png" alt="Team Board"><b>Team Board</b></button>
+        <button class="need-card zoomable" data-image="mission1-role-cards.png"><img src="mission1-role-cards.png" alt="Role cards"><b>Role cards</b></button>
+        <div class="need-card static-card"><div class="big-emoji">🧴</div><b>Glue stick</b></div>
+        <button class="need-card" id="mission1Help"><img src="ui-teamwork.png" alt="Your team"><b>Your team</b></button>
       </div>
-    </section>
-
-    <!-- TEAMWORK -->
-    <section id="screen-teamwork" class="screen info-screen">
-      <div class="panel big-panel">
-        <div class="eyebrow">OUR TEAM</div>
-        <h2>We are different.</h2>
-        <h2>We are good at different things.</h2>
-        <h2 class="gold">That makes our team strong.</h2>
-        <div class="team-routine">
-          <div><span>👀</span><b>LOOK</b></div>
-          <div><span>📖</span><b>READ</b></div>
-          <div><span>🗣️</span><b>SHARE</b></div>
-          <div><span>🤝</span><b>WORK TOGETHER</b></div>
-          <div><span>✅</span><b>CHECK</b></div>
-        </div>
-        <button class="primary" data-nav="home">BACK TO WHOVILLE</button>
+      <div class="timeline-title">YOUR WORK PLAN</div>
+      <div class="timeline">
+        <div class="step"><span class="num">1</span><img src="ui-individual-work-girl.png"><b>INDIVIDUAL WORK</b><strong>READ &amp; THINK</strong><small>Read your role card. Think about how to explain it.</small></div>
+        <div class="arrow">→</div>
+        <div class="step"><span class="num">2</span><img src="ui-teamwork.png"><b>GROUP WORK</b><strong>SHARE</strong><small>Explain all four roles. Listen to each other.</small></div>
+        <div class="arrow">→</div>
+        <div class="step"><span class="num">3</span><img src="ui-teamwork.png"><b>GROUP WORK</b><strong>STICK</strong><small>Stick the four role cards on your Team Board.</small></div>
+        <div class="arrow">→</div>
+        <div class="step"><span class="num">4</span><img src="ui-class-work.png"><b>CLASS WORK</b><strong>LEARNING CHECK</strong><small>Answer the questions with your team.</small></div>
+        <div class="arrow">→</div>
+        <div class="step"><span class="num">5</span><img src="ui-reflect.png"><b>CLASS WORK</b><strong>REFLECTION</strong><small>What are you good at? Why are different strengths important?</small></div>
+        <div class="arrow">→</div>
+        <div class="step unlock-step"><span class="num">6</span><img src="egg-mission-06-lock.png"><b>CLASS WORK</b><strong>UNLOCK THE CODE</strong><small>Open the envelopes. Put the five numbers together.</small><button id="unlockMission2" class="mini-action">ENTER CODE</button></div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- CHRISTMAS WORDS -->
-    <section id="screen-words" class="screen info-screen">
-      <div class="words-shell">
-        <div class="words-header">
-          <div>
-            <div class="eyebrow">CHRISTMAS WORDS</div>
-            <h2>Tap a picture.</h2>
-          </div>
-          <div class="word-tabs">
-            <button class="word-tab active" data-cat="decorations">DECORATIONS</button>
-            <button class="word-tab" data-cat="food">FOOD</button>
-            <button class="word-tab" data-cat="santa">SANTA</button>
-          </div>
-        </div>
-        <div id="wordGrid" class="word-grid"></div>
-      </div>
-    </section>
-
-    <!-- STORY -->
-    <section id="screen-story" class="screen story-screen">
-      <div class="story-card">
-        <div class="story-image-wrap">
-          <img id="storyImage" src="" alt="Story scene" />
-        </div>
-        <div class="story-side">
-          <div class="eyebrow" id="storyMissionLabel">MISSION</div>
-          <h2>👂 LISTEN</h2>
-          <button id="playStory" class="audio-button">▶ PLAY AUDIO</button>
-          <div class="prompt-box">
-            <span>💬</span>
-            <h3>What is this part about?</h3>
-          </div>
-          <p class="talk-note">Talk to your team.</p>
-          <button id="storyNext" class="primary">NEXT →</button>
+  <section id="screen-teamwork" class="screen info-screen">
+    <div class="reference-shell">
+      <div class="reference-head"><div><div class="eyebrow">TEAMWORK HELP</div><h2>Our roles &amp; help cards</h2></div><button class="primary" data-nav="home">BACK TO WHOVILLE</button></div>
+      <div class="reference-grid">
+        <button class="role-preview zoomable" data-image="mission1-role-cards.png"><img src="mission1-role-cards.png" alt="Four team role cards"><span>OUR TEAM ROLES</span></button>
+        <div class="help-grid">
+          <button class="zoomable" data-image="help-card-1.png"><img src="help-card-1.png" alt="Help card 1"></button>
+          <button class="zoomable" data-image="help-card-2.png"><img src="help-card-2.png" alt="Help card 2"></button>
+          <button class="zoomable" data-image="help-card-3.png"><img src="help-card-3.png" alt="Help card 3"></button>
+          <button class="zoomable" data-image="help-card-4.png"><img src="help-card-4.png" alt="Help card 4"></button>
+          <button class="zoomable" data-image="help-card-5.png"><img src="help-card-5.png" alt="Help card 5"></button>
+          <button class="zoomable" data-image="help-card-6.png"><img src="help-card-6.png" alt="Help card 6"></button>
         </div>
       </div>
-    </section>
+      <p class="reference-note">Tap a card to make it bigger.</p>
+    </div>
+  </section>
 
-    <!-- MISSION WORDS -->
-    <section id="screen-mission-words" class="screen info-screen">
-      <div class="mission-words-shell">
-        <div class="eyebrow">WORDS FOR THIS MISSION</div>
-        <h2 id="missionWordsTitle">Christmas Words</h2>
-        <div id="missionWordGrid" class="mission-word-grid"></div>
-        <button id="missionWordsNext" class="primary">NEXT →</button>
-      </div>
-    </section>
+  <section id="screen-words" class="screen info-screen">
+    <div class="words-shell">
+      <div class="words-header"><div><div class="eyebrow">CHRISTMAS WORDS</div><h2>Look at the picture cards.</h2></div><div class="word-tabs"><button class="word-tab active" data-cat="decorations">DECORATIONS</button><button class="word-tab" data-cat="food">FOOD</button><button class="word-tab" data-cat="santa">SANTA</button></div></div>
+      <div id="wordGrid" class="word-grid"></div>
+    </div>
+  </section>
 
-    <!-- TASK -->
-    <section id="screen-task" class="screen task-screen">
-      <div class="task-layout">
-        <div class="goal-strip">
-          <span>🎯</span>
-          <div>
-            <div class="mini-label">YOUR GOAL</div>
-            <h2 id="goalText">Complete your mission.</h2>
-          </div>
-        </div>
+  <section id="screen-mission-words" class="screen info-screen">
+    <div class="words-shell"><div class="eyebrow">WORDS FOR THIS MISSION</div><h2 id="missionWordsTitle"></h2><div id="missionWordGrid" class="word-grid"></div><button id="missionWordsNext" class="primary">NEXT →</button></div>
+  </section>
 
-        <div class="need-strip">
-          <div class="mini-label">🎒 YOU NEED</div>
-          <div id="needItems" class="need-items"></div>
-        </div>
+  <section id="screen-task" class="screen task-screen">
+    <div class="task-layout"><div class="goal-strip"><div><div class="mini-label">YOUR GOAL</div><h2 id="goalText"></h2></div></div><div class="need-strip"><div class="mini-label">WHAT DO YOU NEED?</div><div id="needItems" class="need-items"></div></div><div id="stepsRow" class="steps-row"></div><div class="bottom-actions"><button id="nextSymbolBtn" class="utility strong">🔎 BACK TO WHOVILLE</button></div></div>
+  </section>
+</main>
 
-        <div id="stepsRow" class="steps-row"></div>
+<div id="codeModal" class="modal hidden" role="dialog" aria-modal="true">
+  <div class="modal-card code-card"><button class="modal-close" data-close="codeModal">×</button><div class="eyebrow">LOCKED MISSION</div><h2 id="codeTitle">Enter the code</h2><p>Five teams. Five numbers. One mission!</p><input id="codeInput" inputmode="numeric" maxlength="5" placeholder="_ _ _ _ _"><p id="codeError" class="error"></p><button id="submitCode" class="primary">UNLOCK</button></div>
+</div>
+<div id="imageModal" class="modal hidden" role="dialog" aria-modal="true"><div class="modal-card image-card"><button class="modal-close" data-close="imageModal">×</button><img id="modalImage" alt="Enlarged material"></div></div>
 
-        <div class="bottom-actions">
-          <button class="utility">💡 HELP STATION</button>
-          <button class="utility">✅ SOLUTION STATION</button>
-          <button id="nextSymbolBtn" class="utility strong">🔎 BACK TO WHOVILLE</button>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <audio id="homeMusic" src="whoville-theme.mp3" loop preload="auto"></audio>
-  <audio id="grinchAudio" src="grinch-says.m4a" preload="auto"></audio>
-  <audio id="storyAudio" preload="auto"></audio>
-
-  <script src="site-data.js"></script>
-  <script src="script.js"></script>
+<audio id="homeMusic" src="whoville-theme.mp3" loop preload="auto"></audio>
+<audio id="storyAudio" preload="auto"></audio>
+<script src="site-data.js"></script>
+<script src="script.js"></script>
 </body>
 </html>

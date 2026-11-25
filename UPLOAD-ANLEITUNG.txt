@@ -1,0 +1,28 @@
+GRINCH / WHOVILLE WEBSITE – MISSION 1 UPDATE
+
+UPLOAD: Entpacke diese ZIP und lade ALLE enthaltenen Dateien in das Hauptverzeichnis deines GitHub-Repositories. Bei gleichnamigen Dateien: ersetzen/überschreiben.
+
+WICHTIG: Die bereits vorhandenen Dateien story-01...story-07, die Wortkarten (z. B. 01-stocking.png) und die übrigen Audios bleiben im Repository. Sie werden vom neuen Code weiterverwendet.
+
+NEU IN DIESER VERSION:
+- Grinch -> Story 1 -> NEXT -> Lumi Escape-Room-Video -> NEXT -> Teamwork-Bild -> Mission 1
+- Mission 1 ohne Wortkarten
+- Mission 1: YOUR GOAL + WHAT DO YOU NEED + Zeitstrahl
+- Zeitstrahl: Individual Work -> Group Work -> Group Work -> Class Work -> Reflection -> Unlock the Code
+- echte Team-Board-/Rollenkarten-Vorschau
+- Teamwork-Kinder auf Homepage öffnen dauerhaft Rollen + Hilfekarten
+- Missionen 2-6 sind codegesperrt
+- richtiger Code öffnet direkt die Storyseite der Mission; Audio startet NICHT automatisch
+- Freischaltung wird im Browser gespeichert
+
+VORLÄUFIGE CODES:
+Mission 2 / STAR: 41532
+Mission 3 / GINGERBREAD: 68241
+Mission 4 / BELL: 35716
+Mission 5 / SANTA: 92453
+Mission 6 / LOCK: 56184
+
+LUMI-LINK:
+https://app.lumi.education/run/B6_eTg
+
+HINWEIS: Wenn Lumi die Einbettung blockiert, funktioniert weiterhin der Button OPEN VIDEO.
