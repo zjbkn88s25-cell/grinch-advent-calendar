@@ -1,19 +1,38 @@
-V7 RESPONSIVE FIX
+GRINCH V8 – EASTER-EGG LANDSCAPE
 
-UPLOAD NUR DIESE 4 DATEIEN AUF GITHUB UND ERSETZE DIE ALTEN:
+DIESE ZIP ENTPACKEN UND ALLE ENTHALTENEN DATEIEN AUF GITHUB HOCHLADEN.
+
+ERSETZEN:
 - index.html
 - styles.css
 - script.js
 - site-data.js
 
-NICHT erneut hochladen:
-- Bilder
-- Audios
-- Wortkarten
+NEU HOCHLADEN:
+- egg-mission-01-grinch.png
+- egg-mission-02-star.png
+- egg-mission-03-gingerbread.png
+- egg-mission-04-bell.png
+- egg-mission-05-santa.png
+- egg-mission-06-lock.png
+- egg-distractor-wreath.png
+- egg-distractor-stocking.png
+- egg-distractor-mistletoe.png
+- egg-distractor-bauble.png
+- egg-distractor-present.png
+- egg-distractor-candy-cane.png
+- egg-distractor-sleigh.png
+- egg-distractor-pudding.png
 
-Neu:
-- Handy und Hochformat dürfen scrollen
-- Digitale Tafel / Querformat bleibt kompakt
-- fester HOME-Button auf Unterseiten
-- NEXT SYMBOL führt zurück zu Whoville
-- größere Touch-Flächen
+NICHT NOCHMAL HOCHLADEN:
+- Storybilder story-01 ... story-07
+- Storyaudios
+- whoville-background.png
+- whoville-theme.mp3
+- vorhandene Wortkarten
+
+Funktion:
+- 6 echte Missionsobjekte öffnen Missionen.
+- 8 Wortschatzobjekte sind klickbare Ablenker.
+- Falscher Klick: “... — not this one. Try again!”
+- Alle PNGs haben transparenten Hintergrund.

@@ -419,3 +419,83 @@ nav button,.music-btn,.primary,.utility,.audio-button,.word-tab,.choice-popover 
     width:min(92vw,420px);
   }
 }
+
+/* V8 Easter-egg landscape */
+.mission-hotspot,
+.vocab-hotspot{
+  background:transparent;
+  border:0;
+  padding:0;
+  position:absolute;
+  cursor:pointer;
+  z-index:6;
+  transition:transform .15s ease, filter .15s ease;
+}
+.mission-hotspot img,
+.vocab-hotspot img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  display:block;
+  filter:drop-shadow(0 3px 4px rgba(0,0,0,.18));
+}
+.mission-hotspot:hover,
+.vocab-hotspot:hover{
+  transform:scale(1.08);
+  filter:brightness(1.05);
+}
+.mission-hotspot:focus-visible,
+.vocab-hotspot:focus-visible{
+  outline:3px dashed rgba(255,255,255,.85);
+  outline-offset:3px;
+}
+
+/* Mission objects: visible but scene-like */
+.mission-1{right:4%;top:12%;width:14%;height:23%}
+.mission-2{left:41%;top:20%;width:6.2%;height:11%}
+.mission-3{left:17%;bottom:8%;width:6.5%;height:12%}
+.mission-4{left:59%;top:31%;width:6%;height:11%}
+.mission-5{right:22%;bottom:8%;width:8.5%;height:16%}
+.mission-6{right:4%;bottom:8%;width:7.5%;height:14%}
+
+/* Vocabulary distractors: deliberately smaller/subtler */
+.vh-wreath{left:7%;top:38%;width:5.2%;height:10%}
+.vh-stocking{left:29%;top:47%;width:4.6%;height:9%}
+.vh-mistletoe{left:52%;top:12%;width:4.8%;height:9%}
+.vh-bauble{left:67%;top:39%;width:4.2%;height:8%}
+.vh-present{left:44%;bottom:10%;width:5.3%;height:10%}
+.vh-candy{right:10%;top:44%;width:4.2%;height:9%}
+.vh-sleigh{left:8%;bottom:19%;width:7%;height:12%}
+.vh-pudding{right:36%;bottom:12%;width:5.2%;height:10%}
+
+.wrong-toast{
+  position:absolute;
+  left:50%;
+  bottom:4%;
+  transform:translateX(-50%);
+  min-width:280px;
+  max-width:60vw;
+  padding:14px 22px;
+  border-radius:18px;
+  background:rgba(255,248,232,.97);
+  color:#21492c;
+  border:3px solid #b8202a;
+  text-align:center;
+  z-index:30;
+  box-shadow:0 12px 30px rgba(0,0,0,.25);
+  font-family:Arial,sans-serif;
+}
+.wrong-toast strong{display:block;font-size:clamp(18px,1.5vw,28px)}
+.wrong-toast span{font-size:clamp(16px,1.15vw,22px)}
+
+@media (max-width: 600px){
+  .vocab-hotspot{min-width:42px;min-height:42px}
+  .vh-wreath{left:5%;top:39%;width:10%}
+  .vh-stocking{left:28%;top:49%;width:9%}
+  .vh-mistletoe{left:51%;top:14%;width:9%}
+  .vh-bauble{left:66%;top:40%;width:8%}
+  .vh-present{left:42%;bottom:9%;width:10%}
+  .vh-candy{right:8%;top:45%;width:8%}
+  .vh-sleigh{left:5%;bottom:18%;width:12%}
+  .vh-pudding{right:34%;bottom:10%;width:10%}
+}

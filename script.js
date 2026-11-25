@@ -100,6 +100,21 @@
     });
   });
 
+
+  // Clickable vocabulary Easter eggs that are not mission symbols
+  let toastTimer;
+  $$(".vocab-hotspot").forEach(h=>{
+    h.addEventListener("click",(e)=>{
+      e.stopPropagation();
+      const word = h.dataset.word || "this";
+      const toast = $("#wrongToast");
+      $("#wrongWord").textContent = `${word.charAt(0).toUpperCase()+word.slice(1)} — not this one.`;
+      toast.classList.remove("hidden");
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(()=>toast.classList.add("hidden"),2200);
+    });
+  });
+
   // Mission hotspots
   $$(".mission-hotspot").forEach(h=>{
     h.addEventListener("click",(e)=>{
