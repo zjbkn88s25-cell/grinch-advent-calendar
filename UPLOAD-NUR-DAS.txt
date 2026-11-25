@@ -1,0 +1,16 @@
+JETZT NUR DAS HOCHLADEN
+
+1. ZIP entpacken.
+2. ALLE Dateien aus diesem Ordner in das Hauptverzeichnis des GitHub-Repositories hochladen.
+3. Gleichnamige Dateien ersetzen.
+4. Commit changes.
+5. Website neu laden.
+
+Du musst die alten Story-Audios, Storybilder, Wortkarten, Missionssymbole und den Hintergrund NICHT nochmal hochladen.
+
+Diese ZIP enthält nur:
+- aktuellen Website-Code
+- Mission-1-Ablauf
+- Teamwork-/Hilfekarten
+- 3D-Unterrichtssymbole
+- vorläufige Missionscodes

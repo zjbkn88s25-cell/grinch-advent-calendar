@@ -42,7 +42,13 @@
 
     <button id="teamworkHotspot" class="teamwork-hotspot"><img src="teamwork-kids.png" alt="Teamwork"></button>
     <div id="wrongToast" class="wrong-toast hidden"><strong id="wrongWord">Not this one.</strong><span>Try again!</span></div>
-  </section>
+  
+<div id="grinchChoice" class="choice-popover hidden">
+  <button id="grinchListen" type="button">🎵 LISTEN TO THE GRINCH</button>
+  <button id="grinchMission" type="button">🎯 START MISSION 1</button>
+</div>
+
+</section>
 
   <section id="screen-story" class="screen story-screen">
     <div class="story-card">
@@ -97,18 +103,51 @@
         <button class="need-card" id="mission1Help"><img src="ui-teamwork.png" alt="Your team"><b>Your team</b></button>
       </div>
       <div class="timeline-title">YOUR WORK PLAN</div>
-      <div class="timeline">
-        <div class="step"><span class="num">1</span><img src="ui-individual-work-girl.png"><b>INDIVIDUAL WORK</b><strong>READ &amp; THINK</strong><small>Read your role card. Think about how to explain it.</small></div>
-        <div class="arrow">→</div>
-        <div class="step"><span class="num">2</span><img src="ui-teamwork.png"><b>GROUP WORK</b><strong>SHARE</strong><small>Explain all four roles. Listen to each other.</small></div>
-        <div class="arrow">→</div>
-        <div class="step"><span class="num">3</span><img src="ui-teamwork.png"><b>GROUP WORK</b><strong>STICK</strong><small>Stick the four role cards on your Team Board.</small></div>
-        <div class="arrow">→</div>
-        <div class="step"><span class="num">4</span><img src="ui-class-work.png"><b>CLASS WORK</b><strong>LEARNING CHECK</strong><small>Answer the questions with your team.</small></div>
-        <div class="arrow">→</div>
-        <div class="step"><span class="num">5</span><img src="ui-reflect.png"><b>CLASS WORK</b><strong>REFLECTION</strong><small>What are you good at? Why are different strengths important?</small></div>
-        <div class="arrow">→</div>
-        <div class="step unlock-step"><span class="num">6</span><img src="egg-mission-06-lock.png"><b>CLASS WORK</b><strong>UNLOCK THE CODE</strong><small>Open the envelopes. Put the five numbers together.</small><button id="unlockMission2" class="mini-action">ENTER CODE</button></div>
+      <div class="timeline-wrap" aria-label="Mission 1 work plan">
+        <div class="timeline">
+          <div class="step">
+            <span class="num">1</span>
+            <div class="step-icons"><img src="ui-individual-work-girl.png" alt="Individual work"><img src="ui-read.png" alt="Read"></div>
+            <b>INDIVIDUAL WORK</b><strong>READ &amp; THINK</strong>
+            <small>Read your role card. Think about how to explain it.</small>
+          </div>
+          <div class="arrow">→</div>
+          <div class="step">
+            <span class="num">2</span>
+            <div class="step-icons"><img src="ui-teamwork.png" alt="Group work"><img src="ui-share.png" alt="Share"></div>
+            <b>GROUP WORK</b><strong>SHARE</strong>
+            <small>Explain all four roles. Listen to each other.</small>
+          </div>
+          <div class="arrow">→</div>
+          <div class="step">
+            <span class="num">3</span>
+            <div class="step-icons"><img src="ui-teamwork.png" alt="Group work"><img src="ui-stick.png" alt="Stick"></div>
+            <b>GROUP WORK</b><strong>STICK</strong>
+            <small>Stick the four role cards on your Team Board.</small>
+          </div>
+          <div class="arrow">→</div>
+          <div class="step">
+            <span class="num">4</span>
+            <div class="step-icons"><img src="ui-class-work.png" alt="Class work"><img src="ui-check.png" alt="Check"></div>
+            <b>CLASS WORK</b><strong>LEARNING CHECK</strong>
+            <small>Answer the questions together.</small>
+          </div>
+          <div class="arrow">→</div>
+          <div class="step">
+            <span class="num">5</span>
+            <div class="step-icons"><img src="ui-class-work.png" alt="Class work"><img src="ui-reflect.png" alt="Reflect"></div>
+            <b>CLASS WORK</b><strong>REFLECTION</strong>
+            <small>What are you good at? Why do we need different strengths?</small>
+          </div>
+          <div class="arrow">→</div>
+          <div class="step unlock-step">
+            <span class="num">6</span>
+            <div class="step-icons"><img src="ui-class-work.png" alt="Class work"><img src="egg-mission-06-lock.png" alt="Unlock"></div>
+            <b>CLASS WORK</b><strong>UNLOCK THE CODE</strong>
+            <small>Put the five team numbers together.</small>
+            <button id="unlockMission2" class="mini-action" type="button">ENTER CODE</button>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -154,6 +193,7 @@
 
 <audio id="homeMusic" src="whoville-theme.mp3" loop preload="auto"></audio>
 <audio id="storyAudio" preload="auto"></audio>
+<audio id="grinchAudio" src="grinch-says.m4a" preload="auto"></audio>
 <script src="site-data.js"></script>
 <script src="script.js"></script>
 </body>

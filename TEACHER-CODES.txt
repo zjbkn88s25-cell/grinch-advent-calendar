@@ -1,7 +1,10 @@
-VORLÄUFIGE MISSIONS-CODES (später einfach in site-data.js ändern)
+VORLÄUFIGE MISSIONS-CODES
 
 Mission 2 – Star / Christmas Decorations: 41532
 Mission 3 – Gingerbread / Christmas Feast: 68241
 Mission 4 – Bell / Christmas Singing: 35716
 Mission 5 – Santa: 92453
 Mission 6 – Lock / Finale: 56184
+
+Die gleichen Codes stehen zusätzlich in site-data.js.
+Wenn wir am Wochenende eure endgültigen Codes haben, müssen nur diese Werte geändert werden.
