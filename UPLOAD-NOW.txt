@@ -1,19 +1,19 @@
+V7 RESPONSIVE FIX
+
 UPLOAD NUR DIESE 4 DATEIEN AUF GITHUB UND ERSETZE DIE ALTEN:
+- index.html
+- styles.css
+- script.js
+- site-data.js
 
-1. index.html
-2. styles.css
-3. script.js
-4. site-data.js
+NICHT erneut hochladen:
+- Bilder
+- Audios
+- Wortkarten
 
-WICHTIG:
-- Deine Bilder und Audios bleiben im GitHub-Hauptverzeichnis, so wie sie jetzt schon liegen.
-- NICHT wieder alle Medien hochladen.
-- Danach Commit changes.
-- Dann GitHub Pages neu laden.
-
-Diese Version ist für die digitale Tafel optimiert:
-- 16:9
-- kein vertikales Scrollen
-- Homepage = Winterlandschaft
-- transparente Missionssymbole direkt auf dem Hintergrund
-- jede Mission öffnet eigene Screens
+Neu:
+- Handy und Hochformat dürfen scrollen
+- Digitale Tafel / Querformat bleibt kompakt
+- fester HOME-Button auf Unterseiten
+- NEXT SYMBOL führt zurück zu Whoville
+- größere Touch-Flächen

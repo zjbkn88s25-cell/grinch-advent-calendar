@@ -12,6 +12,7 @@
 
   function showScreen(name){
     screens.forEach(s => s.classList.toggle("active", s.id === `screen-${name}`));
+    $("#floatingHome").classList.toggle("hidden", name === "home");
     if(name === "home"){
       if(musicWanted) music.play().catch(()=>{});
     }else{
@@ -50,7 +51,7 @@
     SITE_DATA.vocabulary[cat].forEach(([img,word])=>{
       const el = document.createElement("button");
       el.className = "word-card";
-      el.innerHTML = `<img src="${img}" alt="${word}"><span>${word}</span>`;
+      el.innerHTML = `<img src="${img}" alt="${word}">`;
       el.addEventListener("click",()=>{
         if("speechSynthesis" in window){
           speechSynthesis.cancel();
@@ -82,7 +83,7 @@
         <h3>${title}</h3>
         <p>${text}</p>
       </div>`).join("");
-    $("#nextSymbolBtn").textContent = `🔎 ${m.nextLabel.toUpperCase()}`;
+    $("#nextSymbolBtn").textContent = "🔎 BACK TO WHOVILLE";
     showScreen("task");
   }
 
@@ -142,6 +143,7 @@
   $("#missionWordsNext").addEventListener("click",showTask);
 
   $("#nextSymbolBtn").addEventListener("click",()=>showScreen("home"));
+  $("#floatingHome").addEventListener("click",()=>showScreen("home"));
 
   $$(".word-tab").forEach(tab=>{
     tab.addEventListener("click",()=>{

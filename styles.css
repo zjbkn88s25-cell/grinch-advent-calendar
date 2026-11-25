@@ -1,11 +1,11 @@
 :root{
-  --navy:#08152f;
-  --navy2:#10264d;
-  --gold:#f3c65d;
-  --cream:#fff8e8;
+  --navy:#16351f;
+  --navy2:#24522f;
+  --gold:#f2d06b;
+  --cream:#fff7e8;
   --white:#ffffff;
-  --red:#b8222c;
-  --green:#2f7d47;
+  --red:#b8202a;
+  --green:#2e7d46;
 }
 *{box-sizing:border-box}
 html,body{margin:0;width:100%;height:100%;overflow:hidden;font-family:Georgia,"Times New Roman",serif;background:var(--navy);color:var(--cream)}
@@ -30,7 +30,7 @@ nav button:hover,.music-btn:hover{background:rgba(243,198,93,.12)}
 
 /* HOME */
 .home-screen{
-  background-image:linear-gradient(rgba(3,12,27,.08),rgba(3,12,27,.08)),url("Hintergrund .PNG");
+  background-image:linear-gradient(rgba(3,12,27,.08),rgba(3,12,27,.08)),url("whoville-background.png");
   background-size:cover;background-position:center;
 }
 .hero-copy{
@@ -137,4 +137,285 @@ nav button:hover,.music-btn:hover{background:rgba(243,198,93,.12)}
 @media (max-aspect-ratio: 4/3){
   .topbar{grid-template-columns:auto 1fr auto}.brand{font-size:18px}.topbar nav button{padding:.55em .8em}
   .hero-copy{width:80%}
+}
+
+/* V6 Christmas / Grinch restyle */
+.topbar{
+  background:
+    linear-gradient(90deg, rgba(21,63,33,.98), rgba(111,20,28,.96), rgba(21,63,33,.98));
+  border-bottom:2px solid rgba(242,208,107,.75);
+}
+.brand{color:#fff6d7;text-shadow:0 2px 8px rgba(0,0,0,.28)}
+.holly{color:#d7efcf;font-size:1.15em}
+nav button,.music-btn{
+  border-color:rgba(255,246,215,.72);
+  color:#fff9ea;
+  background:rgba(255,255,255,.05);
+}
+nav button:hover,.music-btn:hover{background:rgba(255,255,255,.12)}
+
+.info-screen{
+  background:
+    radial-gradient(circle at 20% 10%, rgba(207,236,206,.18), transparent 22%),
+    radial-gradient(circle at 85% 20%, rgba(191,33,45,.22), transparent 20%),
+    linear-gradient(135deg,#173b24 0%,#225b33 50%,#6d1822 100%);
+}
+.big-panel,.words-shell,.mission-words-shell{
+  background:rgba(255,248,232,.95);
+  color:#18361f;
+  border:3px solid rgba(177,30,39,.75);
+  box-shadow:0 10px 30px rgba(30,55,36,.22);
+}
+.eyebrow{color:#a61e28}
+.gold{color:#b8202a}
+.primary{
+  background:#b8202a;
+  color:white;
+  border:2px solid #7e1018;
+}
+.team-routine div{
+  background:#f7f1de;
+  border-color:#d7b85e;
+}
+.word-tabs .word-tab{
+  border-color:#b8202a;
+  color:#21492c;
+  background:#fffaf0;
+}
+.word-tab.active{
+  background:#2f7d47;
+  color:#fff;
+  border-color:#245f36;
+}
+.word-card{
+  border:2px solid #c7a74a;
+  background:#fffdf7;
+  padding:.35vh .35vw;
+}
+.word-card img{
+  height:16.5vh;
+  object-fit:contain;
+}
+.word-card span{display:none!important}
+
+.story-screen{
+  background:
+    radial-gradient(circle at 10% 10%, rgba(255,255,255,.08), transparent 18%),
+    linear-gradient(135deg,#173b24,#6f1c26);
+}
+.story-card{
+  background:#fff8e8;
+  color:#18361f;
+  border:3px solid #d4b354;
+}
+.story-side{background:linear-gradient(180deg,#fff8e8,#f7efd9)}
+.prompt-box{
+  border-top-color:#b8202a;
+  border-bottom-color:#2f7d47;
+}
+.talk-note{color:#38553e}
+.audio-button{background:#2f7d47;color:white}
+
+.task-screen{
+  background:
+    radial-gradient(circle at 15% 0%, rgba(255,255,255,.95), transparent 20%),
+    linear-gradient(135deg,#edf7ed,#fff4e4);
+}
+.goal-strip{border-color:#b8202a}
+.need-strip{border-color:#2f7d47}
+.utility.strong{background:#2f7d47;border-color:#245f36}
+.choice-popover{
+  background:#fff8e8;
+  color:#18361f;
+  border-color:#b8202a;
+}
+.choice-popover button{
+  background:#2f7d47;
+  color:white;
+}
+
+/* V7 responsive behavior */
+.floating-home{
+  position:fixed;
+  z-index:80;
+  left:1.2vw;
+  top:13vh;
+  border:2px solid #fff7e8;
+  background:#2f7d47;
+  color:#fff;
+  border-radius:999px;
+  padding:.7em 1.2em;
+  font-weight:900;
+  box-shadow:0 6px 16px rgba(0,0,0,.22);
+  cursor:pointer;
+  font-size:clamp(14px,1.05vw,20px);
+}
+.floating-home:hover{background:#245f36}
+
+button, .mission-hotspot, .word-card{
+  touch-action:manipulation;
+  -webkit-tap-highlight-color:transparent;
+}
+.mission-hotspot{min-width:54px;min-height:54px}
+nav button,.music-btn,.primary,.utility,.audio-button,.word-tab,.choice-popover button{
+  min-height:48px;
+}
+
+/* Digital board / landscape tablet: compact, no page scrolling */
+@media (min-aspect-ratio: 4/3) and (min-width: 900px){
+  html,body{overflow:hidden}
+  #app{overflow:hidden}
+  .screen{overflow:hidden}
+}
+
+/* Phone + portrait tablet: allow scrolling and keep controls reachable */
+@media (max-aspect-ratio: 4/3), (max-width: 899px){
+  html,body{
+    overflow:auto;
+    min-height:100%;
+  }
+  .topbar{
+    position:sticky;
+    top:0;
+    height:auto;
+    min-height:0;
+    grid-template-columns:1fr auto;
+    grid-template-areas:
+      "brand music"
+      "nav nav";
+    row-gap:10px;
+    padding:10px 14px 12px;
+  }
+  .brand{grid-area:brand}
+  nav{grid-area:nav;justify-content:center;flex-wrap:wrap}
+  .music-btn{grid-area:music}
+  #app{
+    position:relative;
+    top:0;
+    left:0;
+    width:100%;
+    height:auto;
+    min-height:calc(100vh - 120px);
+  }
+  .screen{
+    position:relative;
+    inset:auto;
+    min-height:calc(100vh - 120px);
+    overflow:visible;
+  }
+  .home-screen{
+    min-height:72vh;
+    background-size:cover;
+    background-position:center;
+  }
+  .hero-copy{
+    position:relative;
+    left:auto;top:auto;transform:none;
+    width:92%;
+    margin:0 auto;
+    padding-top:18px;
+  }
+  .mission-hotspot{
+    transform:none!important;
+  }
+
+  .story-screen,.info-screen,.task-screen{
+    padding:16px;
+  }
+  .story-card{
+    height:auto;
+    min-height:0;
+    grid-template-columns:1fr;
+  }
+  .story-image-wrap{
+    height:42vh;
+    min-height:280px;
+  }
+  .story-side{
+    padding:24px 18px 30px;
+  }
+
+  .words-shell,.mission-words-shell,.big-panel{
+    height:auto;
+    min-height:0;
+    padding:22px 16px;
+  }
+  .words-header{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:14px;
+  }
+  .word-tabs{
+    flex-wrap:wrap;
+  }
+  .word-grid,.mission-word-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:12px;
+  }
+  .word-card img,
+  .mission-word-grid .word-card img{
+    height:auto;
+    max-height:220px;
+  }
+
+  .task-layout{
+    height:auto;
+    display:block;
+  }
+  .goal-strip,.need-strip,.steps-row,.bottom-actions{
+    margin-bottom:14px;
+  }
+  .need-items{
+    height:auto;
+    flex-wrap:wrap;
+    justify-content:flex-start;
+    padding-top:12px;
+  }
+  .steps-row{
+    grid-template-columns:1fr;
+  }
+  .step-card{
+    min-height:150px;
+  }
+  .bottom-actions{
+    grid-template-columns:1fr;
+  }
+
+  .team-routine{
+    grid-template-columns:1fr 1fr;
+    width:100%;
+  }
+
+  .floating-home{
+    position:fixed;
+    top:auto;
+    bottom:18px;
+    left:18px;
+    z-index:100;
+    font-size:16px;
+  }
+}
+
+/* Extra-small phone: make mission hit targets easier to tap */
+@media (max-width: 600px){
+  nav button,.music-btn{font-size:14px;padding:.65em .9em}
+  .hero-copy h1{font-size:28px}
+  .hero-copy p{font-size:16px}
+
+  .mission-1{right:4%;top:20%;width:24%;height:24%}
+  .mission-2{left:39%;top:31%;width:14%;height:14%}
+  .mission-3{left:10%;bottom:7%;width:15%;height:16%}
+  .mission-4{left:57%;top:40%;width:13%;height:13%}
+  .mission-5{right:18%;bottom:8%;width:18%;height:18%}
+  .mission-6{right:2%;bottom:6%;width:16%;height:17%}
+
+  .choice-popover{
+    position:fixed;
+    left:50%;
+    right:auto;
+    top:auto;
+    bottom:18px;
+    transform:translateX(-50%);
+    width:min(92vw,420px);
+  }
 }

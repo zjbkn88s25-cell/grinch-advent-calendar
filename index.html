@@ -8,7 +8,7 @@
 </head>
 <body>
   <header class="topbar">
-    <div class="brand">✦ THE GRINCH ✦</div>
+    <div class="brand"><span class="holly">❦</span> THE GRINCH <span class="holly">❦</span></div>
     <nav>
       <button data-nav="home">HOME</button>
       <button data-nav="teamwork">TEAMWORK</button>
@@ -17,6 +17,7 @@
     <button id="musicToggle" class="music-btn" aria-label="Toggle music">♫ MUSIC</button>
   </header>
 
+  <button id="floatingHome" class="floating-home hidden">← HOME</button>
   <main id="app">
     <!-- HOME -->
     <section id="screen-home" class="screen active home-screen">
@@ -137,13 +138,13 @@
         <div class="bottom-actions">
           <button class="utility">💡 HELP STATION</button>
           <button class="utility">✅ SOLUTION STATION</button>
-          <button id="nextSymbolBtn" class="utility strong">🔎 NEXT SYMBOL</button>
+          <button id="nextSymbolBtn" class="utility strong">🔎 BACK TO WHOVILLE</button>
         </div>
       </div>
     </section>
   </main>
 
-  <audio id="homeMusic" src="grand_project-santax27s-flight-268666.mp3" loop preload="auto"></audio>
+  <audio id="homeMusic" src="whoville-theme.mp3" loop preload="auto"></audio>
   <audio id="grinchAudio" src="grinch-says.m4a" preload="auto"></audio>
   <audio id="storyAudio" preload="auto"></audio>
 
