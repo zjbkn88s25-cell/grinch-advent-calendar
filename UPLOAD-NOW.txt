@@ -1,7 +1,19 @@
 UPLOAD NUR DIESE 4 DATEIEN AUF GITHUB UND ERSETZE DIE ALTEN:
-index.html
-styles.css
-script.js
-site-data.js
 
-Alle Bilder und Audios bleiben so wie sie jetzt im Hauptverzeichnis liegen.
+1. index.html
+2. styles.css
+3. script.js
+4. site-data.js
+
+WICHTIG:
+- Deine Bilder und Audios bleiben im GitHub-Hauptverzeichnis, so wie sie jetzt schon liegen.
+- NICHT wieder alle Medien hochladen.
+- Danach Commit changes.
+- Dann GitHub Pages neu laden.
+
+Diese Version ist für die digitale Tafel optimiert:
+- 16:9
+- kein vertikales Scrollen
+- Homepage = Winterlandschaft
+- transparente Missionssymbole direkt auf dem Hintergrund
+- jede Mission öffnet eigene Screens

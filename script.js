@@ -1,2 +1,157 @@
-const site=window.GRINCH_SITE,$=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];const bgMusic=$("#bgMusic"),storyAudio=$("#storyAudio"),grinchAudio=$("#grinchAudio");let musicWanted=false,activeMission=null;function toast(m){const t=$("#toast");t.textContent=m;t.classList.add("show");clearTimeout(window.__toast);window.__toast=setTimeout(()=>t.classList.remove("show"),1800)}function isHome(){return location.hash===""||location.hash==="#home"}function updateMusic(){const b=$("#musicToggle");if(isHome()&&musicWanted){bgMusic.play().then(()=>b.textContent="♫ MUSIC ON").catch(()=>b.textContent="♫ PLAY MUSIC")}else{bgMusic.pause();b.textContent=musicWanted?"♫ MUSIC PAUSED":"♫ MUSIC OFF"}}$("#musicToggle").onclick=()=>{musicWanted=!musicWanted;updateMusic()};window.addEventListener("hashchange",()=>{storyAudio.pause();grinchAudio.pause();updateMusic()});$("#grinchExtra").onclick=()=>{bgMusic.pause();grinchAudio.currentTime=0;grinchAudio.play();toast("▶ What does the Grinch say?");grinchAudio.onended=()=>updateMusic()};$$('.gate').forEach(g=>g.onclick=()=>{activeMission=site.missions.find(m=>m.id===Number(g.dataset.mission));openMission(activeMission)});function openMission(m){location.hash="#mission";$("#missionKicker").textContent=`MISSION ${m.id}`;$("#missionTitle").textContent=m.title;$("#missionSymbol").src=m.symbol;$("#codePanel").classList.remove("hidden");$("#storyPanel").classList.add("hidden");$("#taskPanel").classList.add("hidden");$$('.code-boxes input').forEach(i=>i.value="");$("#codeFeedback").textContent="";scrollTo({top:0,behavior:"smooth"})}$("#backHome").onclick=()=>location.hash="#home";$$('.code-boxes input').forEach((input,idx,arr)=>{input.oninput=()=>{input.value=input.value.replace(/\D/g,"").slice(0,1);if(input.value&&arr[idx+1])arr[idx+1].focus()};input.onkeydown=e=>{if(e.key==="Backspace"&&!input.value&&arr[idx-1])arr[idx-1].focus()}});function unlock(force=false){const code=$$('.code-boxes input').map(i=>i.value).join("");if(!force&&code!==site.prototypeCode){$("#codeFeedback").textContent="❌ Check your numbers and try again.";return}$("#codePanel").classList.add("hidden");renderStory(activeMission)}$("#unlock").onclick=()=>unlock(false);$("#preview").onclick=()=>unlock(true);function renderStory(m){$("#storyPanel").classList.remove("hidden");$("#taskPanel").classList.add("hidden");$("#storyImage").src=m.storyImage;storyAudio.src=m.storyAudio;$("#topicChoices").innerHTML="";$("#topicFeedback").textContent="";m.topics.forEach(topic=>{const b=document.createElement("button");b.className="topic-choice";b.textContent=topic;b.onclick=()=>{if(topic===m.correctTopic){$("#topicFeedback").textContent="✅ Yes! Get ready for your mission.";setTimeout(()=>renderTask(m),450)}else{$("#topicFeedback").textContent="🔊 Listen again!"}};$("#topicChoices").appendChild(b)})}$("#playStory").onclick=()=>{bgMusic.pause();storyAudio.currentTime=0;storyAudio.play()};function renderTask(m){storyAudio.pause();$("#storyPanel").classList.add("hidden");$("#taskPanel").classList.remove("hidden");$("#goalText").textContent=m.goal;$("#needItems").innerHTML="";m.needs.forEach(([icon,text])=>{const d=document.createElement("div");d.className="need-item";d.innerHTML=`<b>${icon}</b><span>${text}</span>`;$("#needItems").appendChild(d)});$("#stepRow").innerHTML="";m.steps.forEach(([icon,title,text],idx)=>{const d=document.createElement("div");d.className="step-card";d.innerHTML=`<span class="step-num">${idx+1}</span><div class="icon">${icon}</div><strong>${title}</strong><p>${text}</p>`;$("#stepRow").appendChild(d)});$("#nextText").textContent=m.next}
-const vocab={decorations:[["stocking","01-stocking.png"],["wreath","02-wreath.png"],["mistletoe","03-mistletoe.png"],["present","04-present.png"],["Christmas tree","05-christmas-tree.png"],["bell","06-bell.png"],["star","07-star.png"],["bauble","08-bauble.png"]],food:[["candy cane","01-candy-cane.png"],["gingerbread","02-gingerbread.png"],["milk","03-milk.png"],["cookies","04-cookies.png"],["hot chocolate","05-hot-chocolate.png"],["pudding","06-pudding.png"],["roast","07-roast.png"],["feast","08-feast.png"]],santa:[["Santa Claus / Saint Nick","01-santa-claus-saint-nick.png"],["reindeer","02-reindeer.png"],["sleigh","03-sleigh.png"],["bag","04-bag.png"],["hat","05-hat.png"],["coat","06-coat.png"],["belt","07-belt.png"],["boots","08-boots.png"]]};function renderWords(cat){const grid=$("#wordGrid");grid.innerHTML="";vocab[cat].forEach(([word,img])=>{const b=document.createElement("button");b.className="word-card";b.innerHTML=`<img src="${img}" alt="${word}">`;b.onclick=()=>{if("speechSynthesis"in window){speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(word.replace(" / "," or "));u.lang="en-GB";u.rate=.78;speechSynthesis.speak(u)}};grid.appendChild(b)})}$$('.word-tab').forEach(btn=>btn.onclick=()=>{$$('.word-tab').forEach(b=>b.classList.toggle("active",b===btn));renderWords(btn.dataset.cat)});renderWords("decorations");updateMusic();
+(() => {
+  const $ = (s) => document.querySelector(s);
+  const $$ = (s) => [...document.querySelectorAll(s)];
+  const screens = $$(".screen");
+  const music = $("#homeMusic");
+  const storyAudio = $("#storyAudio");
+  const grinchAudio = $("#grinchAudio");
+  let currentMission = 1;
+  let finalPart = 1;
+  let currentWordCat = "decorations";
+  let musicWanted = false;
+
+  function showScreen(name){
+    screens.forEach(s => s.classList.toggle("active", s.id === `screen-${name}`));
+    if(name === "home"){
+      if(musicWanted) music.play().catch(()=>{});
+    }else{
+      music.pause();
+      $("#grinchChoice").classList.add("hidden");
+    }
+    storyAudio.pause();
+    grinchAudio.pause();
+  }
+
+  function toggleMusic(){
+    musicWanted = !musicWanted;
+    if(musicWanted){
+      music.play().catch(()=>{});
+      $("#musicToggle").textContent = "♫ MUSIC ON";
+    }else{
+      music.pause();
+      $("#musicToggle").textContent = "♫ MUSIC OFF";
+    }
+  }
+
+  function openMission(n){
+    currentMission = n;
+    finalPart = 1;
+    const m = SITE_DATA.missions[n];
+    $("#storyMissionLabel").textContent = `MISSION ${n} · ${m.name.toUpperCase()}`;
+    $("#storyImage").src = m.image;
+    storyAudio.src = m.audio;
+    $("#storyNext").textContent = n===6 ? "NEXT →" : "NEXT →";
+    showScreen("story");
+  }
+
+  function renderWords(cat, target){
+    const grid = $(target);
+    grid.innerHTML = "";
+    SITE_DATA.vocabulary[cat].forEach(([img,word])=>{
+      const el = document.createElement("button");
+      el.className = "word-card";
+      el.innerHTML = `<img src="${img}" alt="${word}"><span>${word}</span>`;
+      el.addEventListener("click",()=>{
+        if("speechSynthesis" in window){
+          speechSynthesis.cancel();
+          const u = new SpeechSynthesisUtterance(word);
+          u.lang = "en-GB";
+          speechSynthesis.speak(u);
+        }
+      });
+      grid.appendChild(el);
+    });
+  }
+
+  function showMissionWords(){
+    const m = SITE_DATA.missions[currentMission];
+    $("#missionWordsTitle").textContent = m.name;
+    renderWords(m.wordCategory, "#missionWordGrid");
+    showScreen("mission-words");
+  }
+
+  function showTask(){
+    const m = SITE_DATA.missions[currentMission];
+    $("#goalText").textContent = m.goal;
+    const needs = $("#needItems");
+    needs.innerHTML = m.needs.map(([icon,text])=>`<div class="need-item"><span class="need-icon">${icon}</span><span>${text}</span></div>`).join("");
+    const row = $("#stepsRow");
+    row.innerHTML = m.steps.map(([title,text],i)=>`
+      <div class="step-card">
+        <div class="step-number">${i+1}</div>
+        <h3>${title}</h3>
+        <p>${text}</p>
+      </div>`).join("");
+    $("#nextSymbolBtn").textContent = `🔎 ${m.nextLabel.toUpperCase()}`;
+    showScreen("task");
+  }
+
+  // Navigation
+  $$("[data-nav]").forEach(btn=>{
+    btn.addEventListener("click",()=>{
+      const dest = btn.dataset.nav;
+      if(dest==="words"){
+        currentWordCat="decorations";
+        $$(".word-tab").forEach(b=>b.classList.toggle("active",b.dataset.cat==="decorations"));
+        renderWords("decorations","#wordGrid");
+      }
+      showScreen(dest);
+    });
+  });
+
+  // Mission hotspots
+  $$(".mission-hotspot").forEach(h=>{
+    h.addEventListener("click",(e)=>{
+      e.stopPropagation();
+      const n = Number(h.dataset.mission);
+      if(n===1){
+        $("#grinchChoice").classList.toggle("hidden");
+      }else{
+        openMission(n);
+      }
+    });
+  });
+
+  $("#grinchListen").addEventListener("click",()=>{
+    music.pause();
+    grinchAudio.currentTime=0;
+    grinchAudio.play().catch(()=>{});
+  });
+  $("#grinchMission").addEventListener("click",()=>openMission(1));
+
+  $("#musicToggle").addEventListener("click",toggleMusic);
+
+  $("#playStory").addEventListener("click",()=>{
+    music.pause();
+    storyAudio.currentTime=0;
+    storyAudio.play().catch(()=>{});
+  });
+
+  $("#storyNext").addEventListener("click",()=>{
+    const m = SITE_DATA.missions[currentMission];
+    if(currentMission===6 && finalPart===1){
+      finalPart=2;
+      $("#storyMissionLabel").textContent = "MISSION 6 · FINALE · PART 2";
+      $("#storyImage").src = m.secondImage;
+      storyAudio.src = m.secondAudio;
+      return;
+    }
+    showMissionWords();
+  });
+
+  $("#missionWordsNext").addEventListener("click",showTask);
+
+  $("#nextSymbolBtn").addEventListener("click",()=>showScreen("home"));
+
+  $$(".word-tab").forEach(tab=>{
+    tab.addEventListener("click",()=>{
+      currentWordCat = tab.dataset.cat;
+      $$(".word-tab").forEach(b=>b.classList.toggle("active",b===tab));
+      renderWords(currentWordCat,"#wordGrid");
+    });
+  });
+
+  // Initialize
+  renderWords("decorations","#wordGrid");
+  $("#musicToggle").textContent = "♫ MUSIC OFF";
+})();
