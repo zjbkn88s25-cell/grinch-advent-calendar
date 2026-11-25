@@ -1,0 +1,7 @@
+UPLOAD NUR DIESE 4 DATEIEN AUF GITHUB UND ERSETZE DIE ALTEN:
+index.html
+styles.css
+script.js
+site-data.js
+
+Alle Bilder und Audios bleiben so wie sie jetzt im Hauptverzeichnis liegen.
