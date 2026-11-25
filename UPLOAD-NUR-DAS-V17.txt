@@ -1,0 +1,14 @@
+V17 – TEACHER RESET IN WHOVILLE
+
+Bitte ALLE Dateien aus dieser ZIP ins GitHub-Hauptverzeichnis hochladen.
+Gleichnamige Dateien ersetzen und Commit changes.
+
+Änderung:
+- Das Zahnrad ist NICHT mehr im Header/fixiert.
+- Es liegt als eigenes klickbares Website-Item direkt über der Whoville-Landschaft.
+- Position Desktop: ca. 5 % vom linken Rand, 74 % von oben.
+- Auf Handy/Tablet wird es etwas größer, damit es gut anklickbar bleibt.
+- Klick auf Zahnrad -> Teacher Menu -> RESET.
+- RESET setzt Mission 2–6 wieder auf geschlossen.
+- Das Hintergrundbild selbst wurde NICHT verändert.
+- Schloss/STAR-Logik bleibt unverändert.
