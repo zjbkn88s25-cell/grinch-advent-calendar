@@ -115,6 +115,15 @@
     });
   });
 
+
+  const teamworkHotspot = $("#teamworkHotspot");
+  if(teamworkHotspot){
+    teamworkHotspot.addEventListener("click",(e)=>{
+      e.stopPropagation();
+      showScreen("teamwork");
+    });
+  }
+
   // Mission hotspots
   $$(".mission-hotspot").forEach(h=>{
     h.addEventListener("click",(e)=>{

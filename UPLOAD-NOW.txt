@@ -1,6 +1,6 @@
-GRINCH V8 – EASTER-EGG LANDSCAPE
+GRINCH V9 – COMPLETE WHOVILLE EASTER-EGG VERSION
 
-DIESE ZIP ENTPACKEN UND ALLE ENTHALTENEN DATEIEN AUF GITHUB HOCHLADEN.
+ENTPACKEN UND ALLE DATEIEN AUF GITHUB HOCHLADEN.
 
 ERSETZEN:
 - index.html
@@ -9,30 +9,22 @@ ERSETZEN:
 - site-data.js
 
 NEU HOCHLADEN:
-- egg-mission-01-grinch.png
-- egg-mission-02-star.png
-- egg-mission-03-gingerbread.png
-- egg-mission-04-bell.png
-- egg-mission-05-santa.png
-- egg-mission-06-lock.png
-- egg-distractor-wreath.png
-- egg-distractor-stocking.png
-- egg-distractor-mistletoe.png
-- egg-distractor-bauble.png
-- egg-distractor-present.png
-- egg-distractor-candy-cane.png
-- egg-distractor-sleigh.png
-- egg-distractor-pudding.png
+- whoville-background-v2.png
+- teamwork-kids.png
+- alle egg-mission-*.png
+- alle egg-distractor-*.png
 
 NICHT NOCHMAL HOCHLADEN:
-- Storybilder story-01 ... story-07
-- Storyaudios
-- whoville-background.png
+- story-01 bis story-07 Bilder
+- story-01 bis story-07 Audios
+- grinch-says.m4a
 - whoville-theme.mp3
-- vorhandene Wortkarten
+- bestehende Wortkarten
 
-Funktion:
-- 6 echte Missionsobjekte öffnen Missionen.
-- 8 Wortschatzobjekte sind klickbare Ablenker.
-- Falscher Klick: “... — not this one. Try again!”
-- Alle PNGs haben transparenten Hintergrund.
+NEU:
+- neuer Whoville-Hintergrund
+- Grinch bleibt die bereits erstellte Version
+- Teamwork-Kinder sind direkt im Dorf anklickbar
+- Missionen und Ablenker sind passend zum neuen Hintergrund positioniert
+- falscher Klick: “Not this one. Try again!”
+- TEAMWORK ist nicht mehr als extra Menübutton nötig; die Kindergruppe öffnet die Teamwork-Seite.
