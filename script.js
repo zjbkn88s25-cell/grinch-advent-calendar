@@ -250,5 +250,23 @@
     $("#imageModal").classList.remove("hidden");
   }));
 
+
+  // Quick navigation back to Whoville
+  $("#lockHome")?.addEventListener("click", () => show("home"));
+
+  // Teacher reset: close Mission 2–6 again in this browser
+  const teacherResetModal = $("#teacherResetModal");
+  $("#teacherResetBtn")?.addEventListener("click", () => {
+    teacherResetModal?.classList.remove("hidden");
+  });
+  $("#teacherResetCancel")?.addEventListener("click", () => {
+    teacherResetModal?.classList.add("hidden");
+  });
+  $("#teacherResetConfirm")?.addEventListener("click", () => {
+    localStorage.setItem(storeKey, JSON.stringify([1]));
+    teacherResetModal?.classList.add("hidden");
+    show("home");
+  });
+
   renderWords("decorations", "#wordGrid");
 })();

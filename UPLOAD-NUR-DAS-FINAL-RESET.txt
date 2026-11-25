@@ -1,0 +1,18 @@
+FINALER RESET-UPDATE
+
+Bitte ALLE Dateien aus dieser ZIP ins GitHub-Hauptverzeichnis hochladen.
+Gleichnamige Dateien ersetzen und Commit changes.
+
+Enthalten:
+- index.html
+- script.js
+- styles.css
+- home-lock.png
+- teacher-reset.png
+
+Mit enthalten:
+- Fragezeichen-Fix
+- STAR nur als Wort
+- Weihnachts-Zahlenschloss = Home/Whoville
+- 3D-Weihnachts-Zahnrad = Teacher Reset
+- Reset setzt Mission 2–6 wieder auf geschlossen

@@ -1,0 +1,17 @@
+FINAL UPDATE – NUR DIESE DATEIEN HOCHLADEN
+
+Alle Dateien aus dieser ZIP ins GitHub-Hauptverzeichnis hochladen und gleichnamige ersetzen.
+
+Enthalten:
+- index.html
+- script.js
+- styles.css
+- home-lock.png
+
+Neu:
+- kaputtes Fragezeichen im letzten Schritt entfernt
+- Weihnachts-Zahlenschloss = jederzeit zurück nach Whoville/Home
+- kleines Zahnrad = Teacher Reset
+- Teacher Reset setzt Mission 2–6 wieder auf geschlossen
+- Sicherheitsabfrage CANCEL / RESET
+- Mission 1 bleibt offen

@@ -142,8 +142,7 @@
           <div class="arrow">→</div>
           <div class="step find-step">
             <span class="num">6</span>
-            <div class="step-icons single-find-icon"><img src="ui-find.png" alt="Find"></div>
-            <b>CLASS WORK</b>
+                        <b>CLASS WORK</b>
             <strong>FIND THE NEXT MISSION</strong>
             <small>Look for:</small>
             <div class="next-word">STAR</div>
@@ -198,5 +197,23 @@
 <audio id="grinchAudio" src="grinch-says.m4a" preload="auto"></audio>
 <script src="site-data.js"></script>
 <script src="script.js"></script>
+
+  <button id="lockHome" class="lock-home-btn" type="button" aria-label="Back to Whoville">
+    <img src="home-lock.png" alt="Back to Whoville">
+  </button>
+
+  <button id="teacherResetBtn" class="teacher-reset-btn" type="button" aria-label="Teacher reset"><img src="teacher-reset.png" alt=""></button>
+
+  <div id="teacherResetModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="teacherResetTitle">
+    <div class="modal-card teacher-reset-card">
+      <h3 id="teacherResetTitle">TEACHER MENU</h3>
+      <p>Reset all missions?</p>
+      <div class="teacher-reset-actions">
+        <button id="teacherResetCancel" type="button">CANCEL</button>
+        <button id="teacherResetConfirm" type="button">RESET</button>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>
