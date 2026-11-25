@@ -1,0 +1,13 @@
+V16 – TEACHER RESET FIX
+
+Bitte ALLE Dateien aus dieser ZIP ins GitHub-Hauptverzeichnis hochladen.
+Gleichnamige Dateien ersetzen und Commit changes.
+
+Fix:
+- Zahnrad bleibt klein oben rechts.
+- JavaScript startet jetzt erst, nachdem das Zahnrad im HTML vorhanden ist.
+- Klick auf Zahnrad öffnet TEACHER MENU.
+- CANCEL schließt das Menü.
+- RESET setzt die Browser-Freischaltung auf Mission 1 zurück.
+- Mission 2–6 sind danach wieder gesperrt.
+- Schloss in Schritt 6 / STAR-Logik bleibt unverändert.

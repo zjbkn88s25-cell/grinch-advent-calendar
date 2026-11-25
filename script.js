@@ -263,8 +263,11 @@
   });
 
   $("#teacherResetConfirm")?.addEventListener("click", () => {
+    localStorage.removeItem(storeKey);
     localStorage.setItem(storeKey, JSON.stringify([1]));
     pendingUnlock = null;
+    currentMission = 1;
+    finalPart = 1;
     teacherResetModal?.classList.add("hidden");
     show("home");
   });
