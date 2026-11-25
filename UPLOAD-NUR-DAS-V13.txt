@@ -1,0 +1,23 @@
+V13 – NUR DAS HOCHLADEN
+
+Alle Dateien aus dieser ZIP ins GitHub-Hauptverzeichnis hochladen.
+Gleichnamige Dateien ersetzen und Commit changes.
+
+Enthalten sind NUR:
+- index.html
+- script.js
+- styles.css
+- ui-read.png
+- ui-think.png
+- ui-class-work.png
+- ui-individual-work-girl.png
+- ui-glue-stick.png
+
+Änderungen:
+- die vier bereits vereinbarten sauberen Bilder
+- richtiger Glue Stick bei WHAT DO YOU NEED?
+- Code verwendet ui-glue-stick.png
+- letzter Schritt: FIND THE NEXT MISSION
+- als Suchhinweis steht NUR das Wort: STAR
+- kein Sternbild im Hinweis; die Kinder müssen STAR lesen und den Stern in Whoville suchen
+- der Code wird weiterhin erst beim Klick auf den Stern eingegeben

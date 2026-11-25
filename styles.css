@@ -117,3 +117,108 @@
     min-height:230px;
   }
 }
+
+/* === V11 polish === */
+
+/* Material icons: consistent 3D images, no emoji-style mismatch */
+.need-card.static-card img{
+  height:11vh;
+  max-width:100%;
+  object-fit:contain;
+}
+
+/* Work plan: calmer, cleaner visual hierarchy */
+.step-icons{
+  height:8.2vh;
+  gap:.45vw;
+}
+.step-icons img{
+  width:44%;
+  height:100%;
+  object-fit:contain;
+}
+.step strong{
+  line-height:1.05;
+}
+.find-step{
+  border-color:#2d7545;
+  background:linear-gradient(180deg,#ffffff,#f4fbf5);
+}
+.find-step .mini-action{
+  background:#a9252e;
+}
+
+/* Phone: make the time line a swipeable horizontal sequence instead of giant vertical cards */
+@media (max-width:699px){
+  .timeline-wrap{
+    width:100%;
+    overflow-x:auto;
+    overflow-y:hidden;
+    scroll-snap-type:x mandatory;
+    padding:0 8px 12px;
+  }
+  .timeline-wrap .timeline{
+    display:flex;
+    min-width:0;
+    width:max-content;
+    gap:10px;
+    align-items:stretch;
+  }
+  .timeline-wrap .step{
+    flex:0 0 78vw;
+    min-height:315px;
+    scroll-snap-align:center;
+    padding:20px 14px 16px;
+  }
+  .timeline-wrap .arrow{
+    flex:0 0 34px;
+    transform:none;
+    height:auto;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .step-icons{
+    height:110px;
+    margin-top:10px;
+  }
+  .step b{font-size:14px}
+  .step strong{font-size:22px}
+  .step small{
+    font-size:16px;
+    line-height:1.25;
+    max-width:90%;
+  }
+}
+
+/* iPad portrait: preserve a readable timeline without oversized cards */
+@media (min-width:700px) and (max-width:1180px){
+  .timeline-wrap .timeline{
+    min-width:1000px;
+  }
+  .step{
+    min-height:235px;
+  }
+  .step-icons{
+    height:72px;
+  }
+}
+
+/* V13: final agreed Mission 1 visuals */
+.need-card.static-card img{
+  height:11vh;
+  max-width:100%;
+  object-fit:contain;
+}
+.single-find-icon img{
+  width:64%;
+}
+.next-word{
+  margin:.4vh auto .7vh;
+  font-family:Georgia,serif;
+  font-size:clamp(24px,2.6vw,42px);
+  line-height:1;
+  font-weight:900;
+  letter-spacing:.14em;
+  color:#a9252e;
+}

@@ -26,6 +26,14 @@
     localStorage.setItem(storeKey, JSON.stringify([...set]));
   }
 
+  function nextMissionNumber() {
+    const set = unlocked();
+    for (let n = 2; n <= 6; n++) {
+      if (!set.has(n)) return n;
+    }
+    return null;
+  }
+
   function stopAudio() {
     if (storyAudio) storyAudio.pause();
     if (grinchAudio) grinchAudio.pause();
@@ -141,8 +149,21 @@
       grinchChoice?.classList.toggle("hidden");
       return;
     }
-    if (unlocked().has(n)) openMission(n);
-    else askCode(n);
+    if (unlocked().has(n)) {
+      openMission(n);
+      return;
+    }
+
+    const next = nextMissionNumber();
+    if (n === next) {
+      askCode(n);
+      return;
+    }
+
+    $("#wrongWord").textContent = "Not this mission yet.";
+    $("#wrongToast").classList.remove("hidden");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => $("#wrongToast").classList.add("hidden"), 2200);
   }));
 
   $("#grinchListen")?.addEventListener("click", () => {
@@ -201,8 +222,8 @@
   $("#escapeNext")?.addEventListener("click", () => show("team-intro"));
   $("#startTeamMission")?.addEventListener("click", () => show("mission1"));
 
-  // End of Mission 1 unlocks Mission 2
-  $("#unlockMission2")?.addEventListener("click", () => askCode(2));
+  // Mission 1 ends with a search clue. The star itself opens the code input.
+  $("#backToWhovilleMission1")?.addEventListener("click", () => show("home"));
 
   // Other missions
   $("#missionWordsNext")?.addEventListener("click", showTask);
