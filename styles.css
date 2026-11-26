@@ -349,3 +349,6 @@
     min-height:44px;
   }
 }
+
+@media(min-width:900px) and (min-aspect-ratio:4/3){.need-row{grid-template-columns:1.1fr repeat(5,1fr)}}
+.team-materials{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:minmax(0,1fr) minmax(0,1fr);gap:8px;min-height:0}.team-materials .role-preview:first-child{grid-column:1/-1}.team-materials .role-preview{min-height:0;align-items:center;justify-content:center;overflow:hidden}.team-materials .role-preview img{height:80%;min-height:0;object-fit:contain}.team-materials b{font-size:14px}.step .mini-action+.mini-action{margin-top:5px}.image-card:has(#reflectionNav:not(.hidden)){display:flex;flex-direction:column}.image-card:has(#reflectionNav:not(.hidden)) img{flex:1;min-height:0}.image-card .modal-close{z-index:2;background:#fff8e8;border-radius:50%}#reflectionNav{display:flex;align-items:center;justify-content:center;gap:20px;padding:6px}#reflectionNav button{padding:6px 20px;cursor:pointer}@media(max-width:899px){.team-materials .role-preview img{height:120px}.team-materials .role-preview{min-height:145px}}
